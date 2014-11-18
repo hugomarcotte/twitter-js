@@ -7,8 +7,6 @@ var Tweet = require('../models').Tweet;
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	var tweets = store.list();
-
 
 	// GET ONE USER AND FIND ALL TWEETS FOR THAT USER
 	// User.find(1).complete(function(err,user) {
@@ -18,16 +16,18 @@ router.get('/', function(req, res) {
 	// });
 
 	// Get all tweets
-	Tweet.findAll().complete(function(err, tweet){
+	Tweet.findAll().complete(function(err, tweets){
 
-		console.log("our test: "+tweet);
+		res.render('index', {
+			title: 'Twitter.js Awesome stuff',
+			tweets: tweets,
+			show_form: true
+		});
+
+		console.log("tweet: "+tweets.length);
 	});
 
-	res.render('index', {
-		title: 'Twitter.js Awesome stuff',
-		tweets: tweets,
-		show_form: true
-	});
+
 });
 
 

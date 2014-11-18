@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
- 
+
 {% block content %}
-  
+
   <div class="page-header">
     <h1>{{ title }}</h1>
   </div>
@@ -12,7 +12,7 @@
       100 followers
     </div>
     <div class="col-md-9">
-    
+
       <!-- display tweets here -->
       {% for tweet in tweets %}
         {% include 'tweet.html' %}
@@ -22,16 +22,16 @@
         <form action="/submit" method="POST">
           <label for="name_field">Name:</label>
           <input name="name" value="{{ username }}" type="text" id="name_field" />
-       
+
           <label for="text_field">Text:</label>
           <input name="text" type="text" id="text_field" style="width: 350px;" />
-       
+
           <input type="submit" value="Submit" />
         </form>
       {% endif %}
 
-      
+
     </div>
   </div>
-    
+
 {% endblock %}

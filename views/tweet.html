@@ -1,7 +1,7 @@
 <div class="tweetbox">
-  <img src="http://lorempixel.com/48/48?{{ tweet.name }}"/>
+  <img src="http://lorempixel.com/48/48?{{ tweet.id }}"/>
   <div class="content">
-    <div class="by"><a href="/users/{{ tweet.name }}">{{ tweet.name }}</a></div>
-    <div><a href="/users/{{ tweet.name }}/tweets/{{ tweet.id }}">{{tweet.text}}</a></div>
+    <div class="by"><a href="/users/{{ tweet.id }}">{{ tweet.UserId }}</a></div>
+    <div><a href="/users/{{ tweet.id }}/tweets/{{ tweet.id }}">{{ tweet.tweet }}</a></div>
   </div>
 </div>
